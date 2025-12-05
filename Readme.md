@@ -70,10 +70,11 @@ Or manually copy-paste the contents.
 ### **Step 4: Start the backend**
 
 ```sh
-npm run dev
+npm run dev --workspace=@safetrail/backend
 ```
 
 This boots the entire monorepo (backend + services required for mobile).
+> To run `frontend` and `authority` app, check the cmd inside package.json
 
 ---
 
@@ -120,10 +121,11 @@ IPv4 Address. . . . . : 192.168.x.x
 Use that in your React Native **.env**:
 
 ```
-API_URL=http://192.168.x.x:PORT
+API_URL=http://192.168.x.x:PORT/api/v1
 ```
 
 > Replace `PORT` with your backend port (example: `8000`, `5000`, etc.)
+> Replace `192.168.x.x` with your ip address
 
 ---
 
@@ -143,7 +145,7 @@ Open the Expo Go app on your phone and scan the QR code.
 
 | Service                       | Location   | Command             |
 | ----------------------------- | ---------- | ------------------- |
-| **Backend (required for RN)** | Safara-4.0 | `npm run dev`       |
+| **Backend (required for RN)** | Safara-4.0 | `npm run dev --workspace=@safetrail/backend`       |
 | **React Native App**          | Safara-RN  | `npx expo start -c` |
 
 Ensure the backend stays running in one terminal while you run the mobile app in another.
